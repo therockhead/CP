@@ -82,10 +82,29 @@ int main() {
 }
 ```
 
+## Reverse a string
 
+```cpp
+std::string str = "Hello, C++!";
+std::cout << "Original string: " << str << std::endl;
+
+// Reverse the string using std::reverse
+std::reverse(str.begin(), str.end());
+
+std::cout << "Reversed string: " << str << std::endl;
+```
 ## Max element from vector
 
 ```cpp
 vector<int> numbers; 
 int maxNumber = max_element(numbers.begin(), numbers.end()); // O(n)
+```
+
+## Properties of XOR
+
+```
+(a ^ a) = 0
+(0 ^ a) = a
+commutative (a ^ b = b ^ a),
+associative (a ^ (b ^ c) = (a ^ b) ^ c)
 ```
