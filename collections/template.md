@@ -81,6 +81,41 @@ int main() {
   }
 }
 ```
+## Binary Search
+```cpp
+
+// vector<int> v        -> contains the sorted array
+// vector<int> queries  -> contains the nums to search
+for (int i = 0; i < k; i++) {
+    int target = queries[i];
+
+    int start = 0;
+    int end = n-1;
+    int mid = (start+end)/2;
+
+    bool found = false;
+    while(start <= end) {
+      if (target > v[mid]) {
+        start = mid +1;
+        mid = (start + end)/2;
+      }
+      else if (target < v[mid]) {
+        end = mid-1;
+        start = start;
+        mid = (start + end)/2;
+      }
+      else if (target == v[mid]) {
+        cout << "YES" << endl;
+        found = true;
+        break;
+      }
+    }
+    if(!found) {
+      cout << "NO" << endl;
+    }
+}
+```
+
 
 ## Reverse a string
 
