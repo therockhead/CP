@@ -1,0 +1,8 @@
+    {
+        "cmd": ["python3", "$file_base_name.py"],
+        "working_dir": "$file_path",
+        "selector": "source.python",
+        "shell_cmd": "python3 \"$file\" < input.txt > output.txt"
+    }
+
+    
