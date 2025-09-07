@@ -1,0 +1,30 @@
+{
+  "CP Template with Author": {
+    "prefix": "pasta",
+    "body": [
+      "/**",
+      " *    author:  TheRockHead",
+      " *    created: ${CURRENT_DATE}.${CURRENT_MONTH}.${CURRENT_YEAR} ${CURRENT_HOUR}:${CURRENT_MINUTE}",
+      "**/",
+      "",
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "#define pb push_back",
+      "#define ll long long",
+      "#define MAX 1e9",
+      "#ifndef ONLINE_JUDGE",
+      "freopen(\"input.txt\", \"r\", stdin);",
+      "freopen(\"output.txt\", \"w\", stdout);",
+      "#endif",
+      "",
+      "int main () {",
+      "\tios::sync_with_stdio(false);",
+      "\tcin.tie(nullptr);",
+      "\t$1",
+      "",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Competitive programming template with author block and timestamp"
+  }
+}
