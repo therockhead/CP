@@ -11,7 +11,7 @@
       "using namespace std;",
       "#define pb push_back",
       "#define ll long long",
-      "#define MAX 1e9",
+      "#define MAX 1e9+7",
       "",
       "int main () {",
       "\t#ifndef ONLINE_JUDGE",
