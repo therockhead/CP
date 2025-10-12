@@ -1,39 +1,38 @@
-#include <bits/stdc++.h>
-using namespace std;
+  #include <bits/stdc++.h>
+  using namespace std;
 
-#define getsuga ios::sync_with_stdio(false); 
-#define tensho cin.tie(nullptr);
-using ll = long long;
+  #define getsuga ios::sync_with_stdio(false); 
+  #define tensho cin.tie(nullptr);
+  using ll = long long;
 
-const int N = 1e5 + 9;
-int a[N];
+  const int N = 1e5 + 9;
+  int a[N];
 
-int main() {
-  getsuga tensho;
-  
-  int n; ll s;
-  cin >> n >> s;
-  
-  for (int i = 1; i <= n; i++) {
-    cin >> a[i];
-  }
-  
-  int ans = 0;
-  int r = 1;
-  ll sum = 0;
-  
-  // two pointer method
-  // time complexity O(n)
-  for (int l = 1; l <= n; l++) {
-    while (r <= n and sum + a[r] <= s) {
-      sum += a[r];
-      r++;
+  int main() {
+    getsuga tensho;
+    
+    int n; ll s;
+    cin >> n >> s;
+    
+    for (int i = 1; i <= n; i++) {
+      cin >> a[i];
     }
-    ans += r - l; 
-    // in that range, any group of numbers
-    // is valid
-    sum -= a[l];
+    
+    ll ans = 0;
+    int r = 1;
+    ll sum = 0;
+    
+    // two pointer method
+    // time complexity O(n)
+    for (int l = 1; l <= n; l++) {
+      while (r <= n and sum + a[r] <= s) {
+        sum += a[r];
+        r++;
+      }
+      ans += r - l; // in that range, any group of numbers
+      // is valid
+      sum -= a[l];
+    }
+    cout << ans << '\n';
+    return 0;
   }
-  cout << ans << '\n';
-  return 0;
-}
