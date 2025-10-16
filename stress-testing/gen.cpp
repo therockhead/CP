@@ -13,7 +13,7 @@ int generate(int a) {
 }
 
 // generate array with non-unique elements (can be similar)
-vector<int> non_unique(ll n, int range) {
+vector<int> gen_non_unique(ll n, int range) {
   vector<int> pool, final;
   for (int i = 0; i < n; i++) {
     pool.push_back(generate(1, range));
@@ -26,11 +26,34 @@ vector<int> non_unique(ll n, int range) {
   return final;
 }
 
+// generate unique array elements
+vector<int> gen_unique(ll n, int range) {
+  vector<int> arr;
+  set<int> used;
+  for (int i = 0; i < n; i++) {
+    int x;
+    do {
+      x = generate(1, range);
+    } while (used.count(x));
+    arr.push_back(x);  
+    used.insert(x);
+  }
+  return arr;
+}
+
 int main(int argc, char *argv[]) {
   srand(atoi(argv[1]));
+  
   freopen("input.txt", "w", stdout);
   
+  int n = generate(1, 100);
+  printf("%d\n", n);
   
+  vector<int> a = gen_unique(n, 100);
+  
+  for (auto it: a) {
+    cout << it << ' ';
+  }
   
   puts("");
   return 0;
